@@ -1,0 +1,66 @@
+#include <iostream>  
+#include <typeinfo>  
+#include "string" 
+using namespace std;
+
+
+void lol(string a) 
+{ 
+ for (int i = 0; i < a.size(); ++i) 
+ { 
+  if (int(a[i]) >= 65 || int(a[i]) <= 90) 
+  { 
+   cout << a[i]; 
+  } 
+  else 
+  { 
+   a[i] = int(a[i]) - 32; 
+   cout << a[i]; 
+  } 
+ } 
+} 
+ 
+void lower(string a) 
+{ 
+ for (int i = 0; i < a.size(); ++i) 
+ { 
+  if (int(a[i]) >= 65 || int(a[i]) <= 97) 
+  { 
+   a[i] = int(a[i]) + 32; 
+   cout << a[i]; 
+  } 
+  else 
+  { 
+   cout << a[i]; 
+  } 
+ } 
+} 
+ 
+void upper(string a) 
+{ 
+ string glas = "AaEeIiOoUuYy"; 
+ for (int i = 0; i < a.size(); ++i) 
+ { 
+  for (int j = 0; j < glas.size(); ++j) 
+  { 
+   if (a[i] == glas[j]) 
+    a[i] = '_'; 
+ 
+  } 
+ } 
+ cout << a; 
+} 
+ 
+int main() 
+{ 
+ string a; 
+ a = "HELLO"; 
+
+ cout << int('A') << ' ' << int('Z') << endl; 
+ cout << int('a') << ' ' << int('z') << endl; 
+ lower(a); 
+ cout << endl; 
+ lol (a); 
+ cout << endl; 
+ upper(a); 
+}
